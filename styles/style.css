@@ -2,7 +2,7 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: sans-serif;
+    font-family: "Inter", sans-serif;
 }
 a {
     text-decoration: none;
@@ -33,6 +33,9 @@ body {
 .events {
     background: #f4f4f4;
     padding: 50px 0 70px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 .events__title {
     font-weight: 700;
@@ -137,14 +140,18 @@ body {
     height: 180px;
 }
 .swiper-container .events__image {
-    width: 416px;
-    height: 234px;
+    width: 100%;
+}
+.events__container {
+    padding: 0 120px;
+    width: 100%;
+    display: flex;
+    justify-content: center;
 }
 .events__slider {
     position: relative;
     max-width: 1500px;
     width: 100%;
-    margin: 0 auto;
 }
 .events__mobile {
     display: none;
@@ -163,13 +170,64 @@ body {
     margin: 0 auto;
     width: fit-content;
 }
+.swiper-button-prev {
+    left: -10px;
+}
+.swiper-button-next {
+    right: -10px;
+}
 
-@media (max-width: 1499px) {
-    .events__slider {
-        max-width: 1000px;
+@media (max-width: 1700px) {
+    .swiper-button-prev {
+        left: -50px;
     }
-    .swiper-container {
-        max-width: 900px;
+    .swiper-button-next {
+        right: -50px;
+    }
+    .events__link-subtitle {
+        line-height: 16px;
+    }
+    .events__title {
+        font-size: 65px;
+    }
+    .events__subtitle {
+        font-size: 24px;
+    }
+    .events {
+        padding: 65px 0;
+    }
+}
+@media (max-width: 1600px) {
+    .events {
+        padding: 60px 0;
+    }
+    .events__title {
+        font-size: 60px;
+    }
+    .events__subtitle {
+        font-size: 22px;
+        margin-bottom: 65px;
+    }
+    .events__link-subtitle {
+        line-height: 15px;
+    }
+}
+@media (max-width: 1500px) {
+    .events {
+        padding: 55px 0;
+    }
+    .events__title {
+        font-size: 55px;
+    }
+    .events__subtitle {
+        font-size: 20px;
+        margin-bottom: 60px;
+    }
+    .events__link-title {
+        font-size: 20px;
+    }
+    .events__link-subtitle {
+        line-height: 14px;
     }
 }
 @media (max-width: 1400px) {
@@ -185,13 +243,41 @@ body {
     .events__single {
         gap: 30px;
     }
-}
-@media (max-width: 1200px) {
+    .events__link-title {
+        font-size: 18px;
+    }
     .events__title {
-        font-size: 64px;
+        font-size: 50px;
     }
     .events__subtitle {
-        font-size: 23px;
+        font-size: 18px;
+        margin-bottom: 50px;
+    }
+    .events {
+        padding: 50px 0;
+    }
+}
+@media (max-width: 1300px) {
+    .events__link-title {
+        font-size: 17px;
+    }
+    .events__title {
+        font-size: 45px;
+    }
+    .events__subtitle {
+        font-size: 16px;
+        margin-bottom: 40px;
+    }
+    .events {
+        padding: 45px 0;
+    }
+}
+@media (max-width: 1200px) {
+    .events {
+        padding: 40px 0;
+    }
+    .events__subtitle {
+        margin-bottom: 35px;
     }
     .single__image {
         height: 420px;
@@ -214,14 +300,32 @@ body {
     .single__more .events__link-title {
         font-size: 16px;
     }
+    .events__link-title {
+        font-size: 15px;
+    }
+    .events__link-subtitle {
+        font-size: 13px;
+    }
 }
-@media (max-width: 992px) {
+@media (max-width: 1100px) {
+    .events {
+        padding: 35px 0;
+    }
     .events__title {
-        font-size: 50px;
+        font-size: 42px;
     }
     .events__subtitle {
-        font-size: 18px;
+        font-size: 15px;
+        margin-bottom: 30px;
     }
+    .events__link-title {
+        font-size: 14px;
+    }
+    .events__link-subtitle {
+        font-size: 12px;
+    }
+}
+@media (max-width: 992px) {
     .events__slider {
         max-width: 600px;
     }
@@ -261,12 +365,6 @@ body {
     }
 }
 @media (max-width: 768px) {
-    .events__title {
-        font-size: 36px;
-    }
-    .events__subtitle {
-        font-size: 16px;
-    }
     .events__slider {
         display: none;
     }
@@ -287,9 +385,6 @@ body {
     }
 }
 @media (max-width: 576px) {
-    .events__title {
-        font-size: 30px;
-    }
     .events__button {
         display: none;
     }

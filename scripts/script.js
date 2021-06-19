@@ -2,6 +2,7 @@ try {
     const swiper = new Swiper(".swiper-container", {
         direction: "horizontal",
         loop: true,
+        slidesPerView: 3,
 
         navigation: {
             nextEl: ".swiper-button-next",
@@ -10,13 +11,13 @@ try {
 
         breakpoints: {
             0: {
-                slidesPerView: 1,
+                spaceBetween: 25,
             },
-            1000: {
-                slidesPerView: 2,
+            1200: {
+                spaceBetween: 30,
             },
-            1500: {
-                slidesPerView: 3,
+            1400: {
+                spaceBetween: 40,
             },
         },
     });
