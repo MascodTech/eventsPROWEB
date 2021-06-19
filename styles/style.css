@@ -326,12 +326,6 @@ body {
     }
 }
 @media (max-width: 992px) {
-    .events__slider {
-        max-width: 600px;
-    }
-    .swiper-container {
-        max-width: 500px;
-    }
     .events__row {
         grid-template-columns: 1fr;
     }
