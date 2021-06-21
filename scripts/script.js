@@ -203,9 +203,11 @@ try {
     }
 
     function setEventHeight() {
-        const currentEvent = document.querySelector(".single__current");
-        const moreEvents = document.querySelector(".single__more");
-        const currentEventHeight = currentEvent.clientHeight;
-        moreEvents.style.height = currentEventHeight + "px";
+        if (screen.width > 992) {
+            const currentEvent = document.querySelector(".single__current");
+            const moreEvents = document.querySelector(".single__more");
+            const currentEventHeight = currentEvent.clientHeight;
+            moreEvents.style.height = currentEventHeight + "px";
+        }
     }
 } catch (error) {}
