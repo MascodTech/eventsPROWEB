@@ -140,13 +140,13 @@ try {
                 singleMore.innerHTML = "";
             } else {
                 eventsRow.innerHTML = "";
-                if (location.hash !== `#event-${index}`) {
+                // if (location.hash !== `#event-${index}`) {
                     singleMore.innerHTML += `<a class="events__link" href="#event-${index}">
                     <img class="events__image" src="../${event.imagePath}" alt="">
                     <h3 class="events__link-title">${event.eventName}</h3>
                     <p class="events__link-subtitle">${event.shortDescr}</p>
                     </a>`;
-                }
+                // }
             }
         });
 
@@ -210,4 +210,8 @@ try {
             moreEvents.style.height = currentEventHeight + "px";
         }
     }
+    setTimeout(() => {
+        setEventHeight()
+    }, 100);
 } catch (error) {}
+
