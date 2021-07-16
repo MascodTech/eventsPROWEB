@@ -23,11 +23,15 @@ try {
   });
 } catch (error) {}
 
-
-
-
-
 try {
+  const eventsTags = document.querySelector(".events__tags");
+
+  tags.forEach((tagData) => {
+    eventsTags.innerHTML += `<div class="events__tag ${
+      tagData.tagName === "all" ? "events__tag_active" : ""
+    }" data-tag="${tagData.tagName}">${tagData.linkName}</div>`;
+  });
+
   const eventsRow = document.querySelector(".events__row");
   const singleEvent = document.querySelector(".events__single");
   const singleMore = document.querySelector(".single__more");
@@ -140,6 +144,12 @@ try {
         `.events__link[data-item-tag=${tagName}]`
       );
       let eventsLinks = document.querySelectorAll(".events__link");
+      if (singleTagItems.length == 0 && tagName !== "all") {
+        document.querySelector(".events__text").textContent =
+          "В данной рубрике отсутствуют статьи";
+      } else {
+        document.querySelector(".events__text").textContent = "";
+      }
       eventsLinks.forEach((link) => {
         link.classList.add("d-none");
         singleTagItems.forEach((link) => {
